@@ -20,5 +20,9 @@ def questionnaire():
 def contact():
     return render_template('contactpage.html')
 
+class Surveyform(FlaskForm):
+    name = StringField('Name', Validator=[DataRequired])
+    student_number = StringField('Student number', validators=[DataRequired(), Length(min=7, max=7)])
+
 if __name__ == '__main__':
    app.run(debug = True)
