@@ -14,18 +14,19 @@
 <body>
 <!-- Navigation bar for site navigation -->
 <nav>
-    <div class="navbar">
-        <!-- Link back to the welcome page with an image as the logo -->
-        <a href="welcomepage.html">
-            <img src="gic.logo.jpeg" class="logo" alt="GIC Logo">
-        </a>
-        <!-- Navigation links to different pages of the site -->
-        <ul>
-            <li><a href="informationpage.html">Info</a></li>
-            <li><a href="datacollectionpage.html">Questionnaire</a></li>
-            <li><a href="contactpage.html">Contact</a></li>
-        </ul>
-    </div>
+        <!-- Responsive navigation bar for better user navigation experience -->
+        <div class="navbar">
+            <!-- Home link with organization logo for brand recognition -->
+            <a href="/">
+            <img src="{{ url_for('static', filename='images/gic.logo.jpeg') }}" class="logo" alt="gic logo">
+            </a>
+            <!-- Navigation links for site navigation -->
+            <ul>
+                <li><a href="/info">Info</a></li>
+                <li><a href="/questionnaire">Questionnaire</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
 </nav>
 <!-- Section to display a Google Maps iframe for location -->
 <section class="location">
