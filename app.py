@@ -30,5 +30,13 @@ class Surveyform(FlaskForm):
                                                                         ('3-4', '3-4 hours'), ('5-6', '5-6 hours'), ('7+', '7+ hours')])
     performance = SelectField('Academic Performance', choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'),
                                                                ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10')])
+    challenging_courses = TextAreaField('Challenging Courses')
+    resources_satisfaction = SelectField('Resource Satisfaction Level', choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'),
+                                                               ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8'),
+                                                               ('9', '9'), ('10', '10')])
+    improvement_suggestions = TextAreaField('Improvement Suggestions')
+    goals = TextAreaField('Goals')
+    submit = SubmitField('Submit')
+
 if __name__ == '__main__':
    app.run(debug = True)
