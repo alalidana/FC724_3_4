@@ -3,14 +3,15 @@ from form import Surveyform
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'speak-up'
+#define flask route for welcomepage
 @app.route('/')
 def index():
     return render_template('welcomepage.html')
-
+#define flask route for informationpage
 @app.route('/info')
 def info():
     return render_template('informationpage.html')
-
+#define flask route for questionaire
 @app.route('/questionnaire', methods=['GET', 'POST'])
 def questionnaire():
     #initializing form
@@ -30,12 +31,13 @@ def questionnaire():
             file.write(f"Teaching Methods Satisfaction: {form.teaching_methods.data}\n")
             file.write(f"Resources Satisfaction: {form.resources_satisfaction.data}\n")
             file.write(f"Improvement Suggestions: {form.improvement_suggestions.data}\n")
-            file.write(f"Goals: {form.goals.data}\n")
+            file.write(f"Goals being met opinion: {form.goals.data}\n")
             file.write("------------------------------------------------\n")
         #flash system to display feedback to the user.
         flash('Your survey response has been successfully submitted!', 'success')
     return render_template('datacollectionpage.html', form= form)
 
+#define flask route for contactpage
 @app.route('/contact')
 def contact():
     return render_template('contactpage.html')
