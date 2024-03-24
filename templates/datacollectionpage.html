@@ -24,12 +24,12 @@
     <main>
         <header id="formheader">
             <div class="questions">
+            <!-- Header of form -->
             <h1 id="title">Students Progress at GIC Survey</h1>
             </div>
         </header>
         <form method="post" id="survey-form" action="{{ url_for('questionnaire') }}">
             {{ form.csrf_token() }}
-
             <fieldset>
             <legend><strong>Identification</strong></legend>
                 <!-- Name Field -->
@@ -68,16 +68,14 @@
                 {{ form.resources_satisfaction.label }}<br>
                 {{ form.resources_satisfaction() }}<br><br>
                 <!--improvement recommendations-->
-                <label for="improvement">Can you provide recommendations on how we can improve the academic experience at GIC?</label><br>
-                <textarea id="improvement" name="improvement" cols="40" rows="5" max="250"></textarea><br>
-                <br>
+                {{ form.improvement_suggestions.label }}<br>
+                {{ form.improvement_suggestions() }}<br><br>
                 <!--goals-->
-                <label for="goals">Do you feel your academic goals are being met at GIC? Why or why not?</label><br>
-                <textarea id="goals" name="goals" cols="40" rows="3" max="250"></textarea><br>
-                <br>
+                {{ form.goals.label }}<br>
+                {{ form.goals() }}<br><br>
                 <!--submit button-->
-                    <button type="submit" id="formButton">Submit</button>
-            </form>
+                {{ form.submit(id='formButton', class_='submit-class') }}
+         </form>
     </main>
 <!-- Footer with social icons and contact information -->
 <footer class="footer">
