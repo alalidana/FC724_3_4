@@ -27,12 +27,10 @@
             <h1 id="title">Students Progress at GIC Survey</h1>
             </div>
         </header>
-        <form method="post" id="survey-form">
+        <form method="post" id="survey-form" action="{{ url_for('questionnaire') }}>
             <fieldset>
             <legend><strong>Identification</strong></legend>
                 <!--Name-->
-                <!--<label for="name" id="name">Name:</label>
-                <input type="text" name="name" placeholder="Enter your name" required/>-->
                 <label for="name">Name:</label>
                 {{ form.name(id='name', placeholder='Enter your name') }}
                 <br><br>
