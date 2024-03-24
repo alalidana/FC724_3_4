@@ -228,7 +228,7 @@ span{
     box-sizing: border-box;
     border-radius: 3px;
     background-color: white;
-    color: darkgrey;
+    color: black;
     /* will inherit the body font family */
     font-family: inherit;
     font-size: 1rem;
