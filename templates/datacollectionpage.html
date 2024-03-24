@@ -27,63 +27,40 @@
             <h1 id="title">Students Progress at GIC Survey</h1>
             </div>
         </header>
-        <form method="post" id="survey-form" action="{{ url_for('questionnaire') }}>
+        <form method="post" id="survey-form" action="{{ url_for('questionnaire') }}">
+            {{ form.csrf_token() }}
+
             <fieldset>
             <legend><strong>Identification</strong></legend>
-                <!--Name-->
-                <label for="name">Name:</label>
-                {{ form.name(id='name', placeholder='Enter your name') }}
-                <br><br>
+                <!-- Name Field -->
+                {{ form.name.label }}
+                {{ form.name() }}<br><br>
 
-                <!--Student Number-->
-                <label for="student_number" id="student_number">Student number:</label>
-                <input type="text" name="student_number" placeholder="P######" pattern="P[0-9]{6}" required>
-                <br><br>
-                <!--Email-->
-                <label for="email" id="email">Email:</label>
-                <input type="email" name="email" placeholder="example@example.com" required/>
-                <br><br>
+                <!-- Student Number Field -->
+                {{ form.student_number.label }}
+                {{ form.student_number() }}<br><br>
+
+                <!-- Email Field -->
+                {{ form.email.label }}
+                {{ form.email() }}<br><br>
+            </fieldset>
             </fieldset>
             <br>
                 <!--attendance-->
-                <label for="attendance">What is your average class attendance rate?</label><br>
-                <input type="rate" id="attendance" name="attendance">
-                <br><br>
+                {{ form.attendance.label }}<br>
+                {{ form.attendance() }}<br><br>
                 <!--Number of students-->
-                <label for="students">What is the total number of students in your class?</label><br>
-                <input type="total-number" id="students" name="students">
-                <br><br>
+                {{ form.students_number.label }}<br>
+                {{ form.students_number() }}<br><br>
                 <!--Hours spent self-studying radio buttons-->
-                <label>How many hours per week do you typically spend on self-learning outside of class?</label><br>
-                <input type="radio" id="hours1" name="self_learning" value="1-2 hours">
-                <label for="hours1">1-2 hours</label><br>
-                <input type="radio" id="hours2" name="self_learning" value="3-4 hours">
-                <label for="hours2">3-4 hours</label><br>
-                <input type="radio" id="hours3" name="self_learning" value="5-6 hours">
-                <label for="hours3">5-6 hours</label><br>
-                <input type="radio" id="hours4" name="self_learning" value="7+ hours">
-                <label for="hours4">7+ hours</label><br>
-                <br>
+                {{ form.self_learning.label }}<br>
+                {{ form.self_learning() }}<br><br>
                 <!--academic performance drop down menu-->
-                <label for="performance">How would you rate your overall academic performance on a scale of 1 to 10?</label><br>
-                <select id="performance" name="performance">
-                    <option value="">Select...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select><br>
-                <br>
+                {{ form.performance.label }}<br>
+                {{ form.performance() }}<br><br>
                 <!--most challenging course-->
-                <label for="challengingCourses">Which courses have you found most challenging and why?</label><br>
-                <textarea id="challengingCourses" name="challengingCourses" cols="40" rows="5" max="250"></textarea><br>
-                <br>
+                {{ form.performance.label }}<br>
+                {{ form.performance() }}<br><br>
                 <!--teaching methods-->
                 <label for="teachingMethods">Are you satisfied with the teaching methods used in the classes? Explain why or why not.</label><br>
                 <textarea id="teachingMethods" name="teachingMethods" cols="40" rows="5" max="250"></textarea><br>
