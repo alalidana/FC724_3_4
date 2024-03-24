@@ -18,6 +18,16 @@ def questionnaire():
     form= Surveyform()
     #check if form is submit and valid
     if form.validate_on_submit():
+        #read existing student numbers to check for duplicates
+        existing_student_numbers = set()
+        try:
+            with open('form_responses.txt', 'r') as file:
+                for line in file:
+                    if line.startswith("Student Number: "):
+                        existing_student_numbers.add(line.strip().split(": ")[1])
+        except FileNotFoundError:
+            # This means the file does not exist yet, so no submissions have been made.
+            pass
         #opens the file in append mode and write form data
         with open('form_responses.txt', 'a') as file:
             file.write(f"Name: {form.name.data}\n")
