@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    }
+body {
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+}
+.banner {
+    background-color: lightgrey;
+    color: white;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(55%);
+}
+.navbar {
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+/* a for the anchor tag */
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+/* adding the hover effect */
+.navbar ul li::after{
+    content: " ";
+    height: 3px;
+    width: 0;
+    background: #003366;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%
+}
+/* adding content */
+.content {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.content p{
+    font-weight: 100;
+    line-height: 25px;
+}
+.content button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #BE9964;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.content button:hover span{
+    width: 100%;
+}
+.content button:hover{
+    border: none;
+}
+/*offer*/
+.expect {
+    background-color: white;
+}
+.offer{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.offer h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+.offer p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-col{
+    flex-basis: 31%;
+    background: lightgrey;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+.offer h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.offer-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width:700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+/* footer*/
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: lightgrey;
+    color: black;
+    position: relative;
+    z-index: 1000;
+}
+
+.footerContainer{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: lightgrey
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.footerBottom {
+    display: grid;
+    justify-content: center;
+    text-transform: uppercase;
+}
+/* css code for data collection page */
+#formbody{
+        background-color: white;
+}
+#formheader{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-top: 2.5%;
+}
+#survey-form{
+    max-width: 550px;
+    margin:auto;
+    color: black;
+    background: lightgrey;
+    padding: 25px;
+    border-radius: 1%;
+    margin-bottom: 5%;
+}
+#formheader{
+    text-align: center;
+    line-height: 10pt;
+    color: black;
+    padding: 10pt;
+    margin-bottom: 2%;
+}
+ #survey-form select, #survey-form textarea, #survey-form #formButton{
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: darkgrey;
+    /* will inherit the body font family */
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: none;
+}
+
+#survey-form input[type="text"],
+#survey-form input[type="email"],#survey-form input[type="rate"],
+#survey-form input[type="total-number"]{
+    width: 40%;
+    height: 20px;
+}
+/* css code for information page */
+.infobody {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding: 0;
+    background: white;
+}
+
+.infoheader {
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+.reasons{
+        max-width: 550px;
+        margin:auto;
+}
+.reasons ol {
+    padding: 10px;
+    list-style: none;
+    counter-reset: my-awesome-counter;
+}
+
+.reasons ol li {
+    counter-increment: my-awesome-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.reasons ol li::before {
+    content: counter(my-awesome-counter);
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+/* reviews */
+
+.example-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #003366;
+}
+
+.example-box {
+    width: 18%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: white;
+}
+.example-box:hover {
+    transform: scale(1.05);
+}
+
+.example-box h2 {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+
+.example-box p {
+    padding: 10px;
+}
+
+.example-box video {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+/* css code for contact page */
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+
+.contact-us{
+    width: 60%;
+    margin: auto;
+}
+.contact-us h2{
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+.contact-col{
+    flex-basis: 100%;
+    margin-bottom: 50px;
+}
+
+.contact-col input,
+.contact-col textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Added border-radius for input fields */
+}
+.hero-btn.red-btn {
+    background-color: #003366; /* Glasgow University Red */
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.hero-btn.red-btn:hover {
+    background-color: lightgrey; /* Darker red on hover */
+}
