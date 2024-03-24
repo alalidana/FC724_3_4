@@ -27,13 +27,16 @@
             <h1 id="title">Students Progress at GIC Survey</h1>
             </div>
         </header>
-        <form id="survey-form">
+        <form method="post" id="survey-form">
             <fieldset>
             <legend><strong>Identification</strong></legend>
                 <!--Name-->
-                <label for="name" id="name">Name:</label>
-                <input type="text" name="name" placeholder="Enter your name" required/>
+                <!--<label for="name" id="name">Name:</label>
+                <input type="text" name="name" placeholder="Enter your name" required/>-->
+                <label for="name">Name:</label>
+                {{ form.name(id='name', placeholder='Enter your name') }}
                 <br><br>
+
                 <!--Student Number-->
                 <label for="student_number" id="student_number">Student number:</label>
                 <input type="text" name="student_number" placeholder="P######" pattern="P[0-9]{6}" required>
