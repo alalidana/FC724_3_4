@@ -11,7 +11,7 @@ class Surveyform(FlaskForm):
     # Email field that must contain a valid email address.
     email = StringField('Email: ', validators=[DataRequired(), Email()],render_kw={'placeholder': 'example@example.com', 'id': 'email'})
     # Numeric field for class attendance rate, expecting a percentage value.
-    attendance = StringField('What is your average class attendance rate?', validators=[DataRequired(), NumberRange(min=0, max=100)],render_kw={'placeholder': 'Enter percentage', 'id': 'attendance'})
+    attendance = StringField('What is your average class attendance rate?', validators=[DataRequired()],render_kw={'placeholder': 'Enter percentage', 'id': 'attendance'})
     # Field for the number of students in class, requiring a numeric value.
     students_number = StringField('What is the total number of students in your class?', validators=[DataRequired()],render_kw={'placeholder': 'Enter total number', 'id': 'students'})
     # Radio field for selecting the hours spent on self-learning.
