@@ -22,6 +22,9 @@ class Surveyform(FlaskForm):
     challenging_courses = TextAreaField('Which courses have you found most challenging and why?', validators=[DataRequired()],
                                         render_kw={'placeholder': 'Describe here', 'id': 'challengingCourses'})
 
+    teaching_methods= TextAreaField('Are you satisfied with the teaching methods used in the classes? Explain why or why not.', validators=[DataRequired()],
+                                        render_kw={'placeholder': 'Describe here', 'id': 'teaching_methods'})
+
     resources_satisfaction = SelectField('Resource Satisfaction Level',
                                          choices=[('Select...', 'Select...'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
                                                   ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10')],

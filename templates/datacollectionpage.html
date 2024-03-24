@@ -59,28 +59,14 @@
                 {{ form.performance.label }}<br>
                 {{ form.performance() }}<br><br>
                 <!--most challenging course-->
-                {{ form.performance.label }}<br>
-                {{ form.performance() }}<br><br>
+                {{ form.challenging_courses.label }}<br>
+                {{ form.challenging_courses() }}<br><br>
                 <!--teaching methods-->
-                <label for="teachingMethods">Are you satisfied with the teaching methods used in the classes? Explain why or why not.</label><br>
-                <textarea id="teachingMethods" name="teachingMethods" cols="40" rows="5" max="250"></textarea><br>
-                <br>
+                {{ form.teaching_methods.label }}<br>
+                {{ form.teaching_methods() }}<br><br>
                 <!--level of satisfaction drop down menu-->
-                <label for="resources">What is your level of satisfaction with the resources available for academic support?</label><br>
-                <select id="resources" name="resources">
-                    <option value="">Select...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select><br>
-                <br>
+                {{ form.resources_satisfaction.label }}<br>
+                {{ form.resources_satisfaction() }}<br><br>
                 <!--improvement recommendations-->
                 <label for="improvement">Can you provide recommendations on how we can improve the academic experience at GIC?</label><br>
                 <textarea id="improvement" name="improvement" cols="40" rows="5" max="250"></textarea><br>
