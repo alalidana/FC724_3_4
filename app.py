@@ -28,23 +28,27 @@ def questionnaire():
         except FileNotFoundError:
             # This means the file does not exist yet, so no submissions have been made.
             pass
+        # Check if the submitted student number is already in the file
+        if form.student_number.data in existing_student_numbers:
+            flash('This student number has already submitted a response.', 'error')
+        else:
         #opens the file in append mode and write form data
-        with open('form_responses.txt', 'a') as file:
-            file.write(f"Name: {form.name.data}\n")
-            file.write(f"Student Number: {form.student_number.data}\n")
-            file.write(f"Email: {form.email.data}\n")
-            file.write(f"Attendance Rate: {form.attendance.data}\n")
-            file.write(f"Number of Students: {form.students_number.data}\n")
-            file.write(f"Self Learning Hours: {form.self_learning.data}\n")
-            file.write(f"Academic Performance: {form.performance.data}\n")
-            file.write(f"Challenging Courses: {form.challenging_courses.data}\n")
-            file.write(f"Teaching Methods Satisfaction: {form.teaching_methods.data}\n")
-            file.write(f"Resources Satisfaction: {form.resources_satisfaction.data}\n")
-            file.write(f"Improvement Suggestions: {form.improvement_suggestions.data}\n")
-            file.write(f"Goals being met opinion: {form.goals.data}\n")
-            file.write("------------------------------------------------\n")
-        #flash system to display feedback to the user.
-        flash('Your survey response has been successfully submitted!', 'success')
+            with open('form_responses.txt', 'a') as file:
+                file.write(f"Name: {form.name.data}\n")
+                file.write(f"Student Number: {form.student_number.data}\n")
+                file.write(f"Email: {form.email.data}\n")
+                file.write(f"Attendance Rate: {form.attendance.data}\n")
+                file.write(f"Number of Students: {form.students_number.data}\n")
+                file.write(f"Self Learning Hours: {form.self_learning.data}\n")
+                file.write(f"Academic Performance: {form.performance.data}\n")
+                file.write(f"Challenging Courses: {form.challenging_courses.data}\n")
+                file.write(f"Teaching Methods Satisfaction: {form.teaching_methods.data}\n")
+                file.write(f"Resources Satisfaction: {form.resources_satisfaction.data}\n")
+                file.write(f"Improvement Suggestions: {form.improvement_suggestions.data}\n")
+                file.write(f"Goals being met opinion: {form.goals.data}\n")
+                file.write("------------------------------------------------\n")
+            #flash system to display feedback to the user.
+            flash('Your survey response has been successfully submitted!', 'success')
     return render_template('datacollectionpage.html', form= form)
 
 #define flask route for contactpage
