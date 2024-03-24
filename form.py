@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, RadioField, SelectField, SubmitField
-from wtforms.validators import DataRequired, Length, Email, NumberRange
+from wtforms.validators import DataRequired, Length, Email
 #Define a class for the survey from which inherits from FlaskForm
 class Surveyform(FlaskForm):
     # Field for the user's name, required input.
